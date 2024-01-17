@@ -19,28 +19,30 @@ Pre requisites: Create an S3 bucket with the name "s3bucket-17-1-2024"
 
 
 
-1. Click on Roles
+## Task 1. Create IAM Role and attach policy to it
+1.1 Go to IAM in the Security, identity, & Compliance section. Click on Roles present under left navigation menu.
+
 ![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/164cc5ce-0af3-4870-a584-0f087a38a85e)
 
 
-2. Create a new Role
+1.2. Create a new Role
 ![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/ce4b44d9-0d88-473b-9980-5b44d67d6ddc)
 
 
-3. Select AWS service
+1.3. Select AWS service
 ![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/417bf4f6-b52f-4a25-82e3-73d4b2b8adc4)
 
 
-4. Choose EC2 as Use case
+1.4. Choose EC2 as Use case
 ![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/cdcf0357-a05c-4850-9b40-ae4baa9fe377)
 
-5. Select AmazonS3FullAccess in Add Policy
+1.5. Select AmazonS3FullAccess in Add Policy
   
-7. Give name as EC2Role
+1.6. Give name as EC2Role
 
 ![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/df307fb0-c577-430a-927e-a06e08071ae2)
 
-7. Create Role
+1.7. Create Role
 ![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/eac7ed2c-6a22-4aeb-bca1-1dc7fe81ea1b)
 
 
@@ -107,4 +109,21 @@ switch to the root user: **sudo su**
 
 3.5 Now upload it to the bucket via AWS CLI (using the following set of commands):
 ![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/22a4e683-dc91-4f83-a058-95c2943e211d)
+
+3.6 Check for the new file in the S3 bucket.
+
+![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/b2391f09-a750-4702-8e35-5bdcc8e321d7)
+
+3.7 Create some files like test2.txt, test3.txt and upload to s3 bucket
+3.8 You can also list the files uploaded to S3 bucket via CLI from the EC2 instance with the following command:
+
+**aws s3 ls s3://s3bucket-17-1-2024**
+
+![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/f3afed2a-dfe3-4190-b917-409a41b6ba1a)
+
+
+## Task 4. Clean up all the resources 
+4.1 Go to EC2 Instance and Select the EC2 Server and Click on Instance State and Terminate Instance
+4.2 Go to S3, click on the bucket which you have created earlier and click on the file in S3 bucket and click on delete. Delete the files first and then go to the bucket and click on Delete, thats how you will be able to delete the bucket.
+
 
