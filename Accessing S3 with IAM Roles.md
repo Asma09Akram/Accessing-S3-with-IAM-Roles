@@ -14,6 +14,11 @@ IAM Features:
 * Secure access to AWS resources for applications that run on Amazon EC2:
 
 
+
+Pre requisites: Create an S3 bucket with the name "s3bucket-17-1-2024"
+
+
+
 1. Click on Roles
 ![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/164cc5ce-0af3-4870-a584-0f087a38a85e)
 
@@ -29,10 +34,9 @@ IAM Features:
 4. Choose EC2 as Use case
 ![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/cdcf0357-a05c-4850-9b40-ae4baa9fe377)
 
-5. Select AmazonS3ReadOnlyAccess in Add Policy
- ![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/dd1cdfce-b4b6-47c4-a3a5-597367df34d0)
-
-6. Give name as EC2Role
+5. Select AmazonS3FullAccess in Add Policy
+  
+7. Give name as EC2Role
 
 ![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/df307fb0-c577-430a-927e-a06e08071ae2)
 
@@ -77,4 +81,30 @@ Choose Role as EC2Role
 2.8 Keep remaining things same and click on Launch Instance
 
 ![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/2311ddd7-53e5-4198-8164-880acb4a16ad)
+
+### Task 3. Connect EC2 Instance
+
+3.1 Click on EC2 Server and click on Connect Button
+
+![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/307bc808-b006-4932-bf3c-7c76b0d6633a)
+
+3.2 Go to EC2 Instance Connect and click on Connect
+
+![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/49c4583c-65c7-4e70-b62f-2408c57b6d09)
+
+3.3 After connection is established 
+type the command
+switch to the root user: **sudo su**
+
+**aws s3 ls** this will list all the buckets in your account, here in this case with the help of EC2 Role, S3 bucket is accessed by EC2 Instance. Ec2 instance has assumed the role and it is able to read the S3 bucket.
+
+![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/27a51e71-3fc1-4a88-ac57-7531b387b4bc)
+
+3.4 Lets create a new file 
+**touch test1.txt**
+
+![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/eb5ae065-287c-43df-b451-18ea84d6e0fb)
+
+3.5 Now upload it to the bucket via AWS CLI (using the following set of commands):
+![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/22a4e683-dc91-4f83-a058-95c2943e211d)
 
