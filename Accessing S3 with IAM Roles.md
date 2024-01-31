@@ -120,7 +120,7 @@ switch to the root user: **sudo su**
 ![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/eb5ae065-287c-43df-b451-18ea84d6e0fb)
 
 3.5 Now upload it to the bucket via AWS CLI (using the following set of commands):
-```aws s3 mv  ```
+```aws s3 mv test1.txt s3://s3bucket-17-1-2024  ```
 ![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/22a4e683-dc91-4f83-a058-95c2943e211d)
 
 3.6 Check for the new file in the S3 bucket.
