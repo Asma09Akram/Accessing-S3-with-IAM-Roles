@@ -109,12 +109,12 @@ Choose Role as EC2Role
 type the command
 switch to the root user: **sudo su**
 
-**aws s3 ls** this will list all the buckets in your account, here in this case with the help of EC2 Role, S3 bucket is accessed by EC2 Instance. Ec2 instance has assumed the role and it is able to read the S3 bucket.
+```aws s3 ls``` this will list all the buckets in your account, here in this case with the help of EC2 Role, S3 bucket is accessed by EC2 Instance. Ec2 instance has assumed the role and it is able to read the S3 bucket.
 
 ![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/27a51e71-3fc1-4a88-ac57-7531b387b4bc)
 
 3.4 Lets create a new file 
-**touch test1.txt**
+```touch test1.txt```
 
 
 ![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/eb5ae065-287c-43df-b451-18ea84d6e0fb)
@@ -131,7 +131,7 @@ switch to the root user: **sudo su**
 
 3.8 You can also list the files uploaded to S3 bucket via CLI from the EC2 instance with the following command:
 
-**aws s3 ls s3://s3bucket-17-1-2024**
+```aws s3 ls s3://s3bucket-17-1-2024```
 
 ![image](https://github.com/Asma09Akram/Accessing-S3-with-IAM-Roles/assets/124654068/f3afed2a-dfe3-4190-b917-409a41b6ba1a)
 
